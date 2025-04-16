@@ -1,0 +1,121 @@
+---
+description: 
+globs: Applies to - *.ts, *.tsx, *.test.ts, *.test.tsx, *.spec.ts, *.spec.tsx, *.json, *.md, *.scss, *.css, *.yml, *.yaml
+alwaysApply: false
+---
+
+React & TypeScript Development Guidelines
+Core Technologies
+
+Applies to - *.ts, *.tsx, *.test.ts, *.test.tsx, *.spec.ts, *.spec.tsx, *.json, *.md, *.scss, *.css, *.yml, *.yaml
+
+TypeScript (latest stable)
+React (latest stable)
+Next.js (App Router)
+Tailwind CSS
+shadcn/ui
+React Query / TanStack Query
+Zod (for schema validation)
+
+Component Architecture
+
+Prefer functional components with hooks
+Implement proper component composition
+Utilize container/presentation pattern where applicable
+Create reusable hooks for shared logic
+Use TypeScript's strict mode and proper type annotations
+
+Folder Structure
+src/
+  app/             # Next.js App Router pages
+  components/
+    ui/            # shadcn UI components
+    [feature]/     # Feature-specific components
+  hooks/           # Custom hooks
+  lib/             # Utility functions and configurations
+  api/             # API routes and service functions
+  types/           # TypeScript type definitions
+  styles/          # Global styles
+  providers/       # Context providers
+  schemas/         # Zod schemas
+TypeScript Best Practices
+
+Use interfaces for objects that represent entities
+Use types for function signatures, unions, and mapped types
+Prefer explicit typing over any
+Use generics for reusable components and functions
+Create barrel exports for cleaner imports
+Use type guards to narrow types when necessary
+Implement discriminated unions for complex state management
+
+UI and Styling
+
+Use Tailwind CSS for styling
+Implement shadcn/ui components for consistent design
+Create component variants using cva or Tailwind's apply directives
+Use CSS variables for theming and design tokens
+Implement responsive designs with Tailwind's responsive utilities
+Ensure proper color contrast and accessibility
+
+Data Fetching
+
+Use React Query/TanStack Query for data fetching and caching
+Implement custom hooks for queries and mutations
+Utilize query keys for effective caching
+Use prefetching for improved performance
+Implement proper error and loading states
+Handle optimistic updates for mutations
+Use query invalidation for data refetching
+
+Performance Optimization
+
+Implement memoization with React.memo, useMemo, and useCallback
+Use dynamic imports and lazy loading for code splitting
+Optimize re-renders by avoiding unnecessary state updates
+Implement virtualization for long lists (react-window or react-virtualized)
+Debounce or throttle high-frequency events
+Use Web Workers for CPU-intensive tasks
+Prioritize Core Web Vitals metrics
+
+State Management
+
+Use React Query for server state
+Use React Context with useReducer for complex global state
+Prefer local component state when possible
+Implement proper state immutability
+Consider Zustand for simple global state
+
+Accessibility
+
+Use semantic HTML elements
+Implement proper ARIA attributes
+Ensure keyboard navigation works correctly
+Test with screen readers
+Support reduced motion preferences
+Ensure proper focus management
+
+Code Quality
+
+Use ESLint with TypeScript rules
+Implement Prettier for consistent formatting
+Write unit tests with Jest and React Testing Library
+Use Husky for pre-commit hooks
+Document complex logic and component props
+Use descriptive variable and function names
+
+Next.js Specific
+
+Implement proper metadata for SEO
+Use server components where appropriate
+Implement proper data fetching strategies
+Use route handlers for API endpoints
+Implement proper error boundaries and loading states
+Use Next.js Image component for optimized images
+
+Collaboration with LLMs
+
+Add detailed comments for complex logic that LLMs might need context for
+Use JSDoc comments for better type inference and documentation
+Create clear component responsibilities to make code more maintainable
+Structure code in a way that's easy to navigate and understand
+Use consistent patterns across the codebase
